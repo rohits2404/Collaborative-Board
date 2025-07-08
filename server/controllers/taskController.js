@@ -5,23 +5,25 @@ import Log from '../models/Log.js';
 import User from '../models/User.js';
 
 export const logAction = async ({ action, task, userId, previousState = null, details = {} }) => {
-    const rawLog = await new Log({
-        action,
-        taskId: task._id,
-        userId,
-        previousState,
-        newState: task,
-        details
-    }).save();
+  const rawLog = await new Log({
+    action,
+    taskId: task._id,
+    userId,
+    previousState,
+    newState: task,
+    details
+  }).save();
 
-    if (global.io) {
-        const populatedLog = await Log.findById(rawLog._id)
-        .populate('userId', 'username')
-        .populate('taskId', 'title');
+  if (global.io) {
+    const populatedLog = await Log.findById(rawLog._id)
+      .populate('userId', 'username')
+      .populate('taskId', 'title');
 
-        global.io.emit('action_logged', populatedLog);
-    }
+    console.log('🔁 Emitting action_logged:', populatedLog);
+    global.io.emit('action_logged', populatedLog); // 🌍 Broadcast to all
+  }
 };
+
 
 // Validation middleware
 export const validateCreateTask = [

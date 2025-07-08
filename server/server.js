@@ -4,6 +4,7 @@ import http from 'http';
 import cors from 'cors';
 import helmet from 'helmet';
 import { Server } from 'socket.io';
+import jwt from 'jsonwebtoken';
 import authMiddleware from './middleware/auth.js';
 import onlineStatus from './middleware/onlineStatus.js';
 
@@ -45,13 +46,31 @@ app.use('/api/tasks', authMiddleware, onlineStatus, taskRoutes);
 app.use('/api/actions', authMiddleware, onlineStatus, actionRoutes);
 
 // WebSocket connection
+// Setup socket.io auth
+io.use((socket, next) => {
+  const token = socket.handshake.auth.token;
+
+  if (!token) {
+    return next(new Error('Unauthorized: No token provided'));
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    socket.user = decoded; // You can use this in connection logs
+    next();
+  } catch (err) {
+    return next(new Error('Invalid token'));
+  }
+});
+
 io.on('connection', (socket) => {
-    console.log('WebSocket client connected');
+    console.log('✅ Connected:', socket.user?.id);
 
     socket.on('disconnect', () => {
-        console.log('WebSocket client disconnected');
+        console.log('❌ Disconnected:', socket.user?.id);
     });
 });
+
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {

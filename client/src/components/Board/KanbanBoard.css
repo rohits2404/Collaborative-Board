@@ -1,0 +1,161 @@
+/* Layout */
+.kanban-board {
+  padding: 2rem;
+  background: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Section */
+.board-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.board-header h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.board-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  font-size: 0.95rem;
+  background-color: #ecf0f1;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Board Columns */
+.board-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Column Styling */
+.column {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.column:hover {
+  transform: translateY(-3px);
+}
+
+/* Column Header */
+.column-header {
+  border-top: 6px solid;
+  padding: 1rem;
+  border-radius: 12px 12px 0 0;
+  background: #fdfdfd;
+}
+
+.column-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.column-icon {
+  font-size: 1.2rem;
+}
+
+.column-title h3 {
+  font-size: 1.1rem;
+  flex-grow: 1;
+  color: #34495e;
+}
+
+.task-count {
+  background: #dfe6e9;
+  color: #2d3436;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* Column Content Area */
+.column-content {
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+  min-height: 100px;
+}
+
+.column-content.dragging-over {
+  background-color: #e8f8ff;
+  border: 2px dashed #3498db;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Task Wrapper Animation */
+.task-wrapper {
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.task-wrapper.dragging {
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+/* Empty Column Message */
+.empty-column {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 1.5rem 0;
+  font-style: italic;
+}
+
+/* Drag Overlay */
+.drag-overlay {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2d3436;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  opacity: 0.95;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInSlideUp 0.3s ease;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .board-header {
+    align-items: flex-start;
+  }
+
+  .board-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

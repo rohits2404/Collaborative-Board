@@ -1,0 +1,129 @@
+/* Container */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdf6f9, #fae0ea);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Card */
+.login-card {
+  background-color: #ffffff;
+  border: 2px solid #2e2e2e;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Header */
+.login-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-header h1 {
+  font-size: 1.8rem;
+  color: #c44569;
+  margin-bottom: 0.3rem;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Form */
+.login-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #c44569;
+  box-shadow: 0 0 0 3px rgba(196, 69, 105, 0.2);
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  background-color: #c44569;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.login-button:hover {
+  background-color: #a63757;
+}
+
+.login-button.loading {
+  background-color: #e38ca3;
+  cursor: not-allowed;
+}
+
+/* Error */
+.error-message {
+  background-color: #ffe0e7;
+  color: #b3244c;
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 1rem;
+  border: 1px solid #f3a6b5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.login-footer {
+  text-align: center;
+  margin-top: 1.4rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.register-link {
+  color: #c44569;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

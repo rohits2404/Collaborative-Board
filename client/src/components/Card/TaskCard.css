@@ -1,0 +1,223 @@
+/* Base card styles */
+.task-card {
+  perspective: 1200px;
+  width: 100%;
+  min-height: 220px;
+  margin: 0 auto;
+  position: relative;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.task-card.dragging {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Inner card wrapper for flip */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+}
+
+.task-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back sides */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Priority Badge */
+.priority-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-weight: bold;
+  color: white;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Actions */
+.card-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+}
+
+.edit-btn:hover { color: #3498db; }
+.delete-btn:hover { color: #e74c3c; }
+.smart-assign-btn:hover { color: #2ecc71; }
+
+/* Content */
+.card-content {
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.task-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.task-description {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  line-height: 1.4;
+}
+
+/* Footer */
+.card-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.assigned-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user-avatar {
+  background: #bdc3c7;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Back Side Styles */
+.card-back-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-back-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #34495e;
+}
+
+.flip-back-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #2980b9;
+}
+
+.card-back-content {
+  font-size: 0.9rem;
+  color: #2d3436;
+}
+
+.detail-item {
+  margin-bottom: 0.7rem;
+}
+
+.detail-item strong {
+  margin-right: 0.3rem;
+}
+
+.description-full p {
+  margin: 0.5rem 0 0 0;
+  color: #636e72;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  background-color: #dfe6e9;
+  color: #2d3436;
+}
+
+/* Status specific colors */
+.status-todo {
+  background-color: #fceae9;
+  color: #e74c3c;
+}
+
+.status-in-progress {
+  background-color: #fff5e0;
+  color: #f39c12;
+}
+
+.status-done {
+  background-color: #e6f9ee;
+  color: #27ae60;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card-actions {
+    gap: 0.2rem;
+  }
+
+  .task-title {
+    font-size: 1rem;
+  }
+
+  .task-description {
+    font-size: 0.85rem;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
