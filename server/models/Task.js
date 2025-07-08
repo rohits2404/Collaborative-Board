@@ -23,12 +23,12 @@ const taskSchema = new mongoose.Schema({
         default: 'Medium'
     },
     assignedTo: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
     createdBy: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
@@ -41,7 +41,7 @@ const taskSchema = new mongoose.Schema({
         default: false
     },
     editedBy: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         default: null
     },
@@ -54,7 +54,7 @@ const taskSchema = new mongoose.Schema({
         default: Date.now
     },
     modifiedBy: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
 }, {

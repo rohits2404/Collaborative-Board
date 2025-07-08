@@ -7,12 +7,12 @@ const actionLogSchema = new mongoose.Schema({
         enum: ['create', 'update', 'delete', 'assign', 'move', 'edit_start', 'edit_end']
     },
     taskId: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Task',
         required: true
     },
     userId: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
