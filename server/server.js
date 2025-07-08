@@ -48,19 +48,19 @@ app.use('/api/actions', authMiddleware, onlineStatus, actionRoutes);
 // WebSocket connection
 // Setup socket.io auth
 io.use((socket, next) => {
-  const token = socket.handshake.auth.token;
+    const token = socket.handshake.auth.token;
 
-  if (!token) {
-    return next(new Error('Unauthorized: No token provided'));
-  }
+    if (!token) {
+        return next(new Error('Unauthorized: No token provided'));
+    }
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    socket.user = decoded; // You can use this in connection logs
-    next();
-  } catch (err) {
-    return next(new Error('Invalid token'));
-  }
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        socket.user = decoded; // You can use this in connection logs
+        next();
+    } catch (err) {
+        return next(new Error('Invalid token'));
+    }
 });
 
 io.on('connection', (socket) => {
