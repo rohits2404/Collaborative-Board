@@ -60,22 +60,20 @@ cd collaborative-board
 ```bash
 cd backend
 npm install
+```
 
 🔐 Environment Variables
 Create a .env file inside /backend:
 
-env
-Copy
-Edit
+```env
 PORT=5000
 MONGODB_URL=your_mongodb_uri
 JWT_SECRET=your_secret_key
 CLIENT_URL=frontend_deployed_url
+```
 
 ▶️ Start Backend Server
-bash
-Copy
-Edit
+```bash
 npm run dev
 ```
 
