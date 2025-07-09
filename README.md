@@ -16,7 +16,7 @@ A web-based collaborative To-Do Board application where multiple users can log i
 
 ## 🚀 Live Demo
 
-🔗 [**Frontend Deployment**](https://taskflow-three-theta.vercel.app/)  
+🔗 [**Frontend Deployment**](https://taskflow-board.vercel.app/)  
 🔗 [**Backend Deployment**](https://collaborative-board-9j5q.onrender.com)  
 📹 [**Demo Video**](#) *(Coming soon)*
 
