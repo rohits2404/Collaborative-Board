@@ -17,3 +17,12 @@ A Web-based Collaborative To-Do Board Application where Multiple Users can log i
 🔗 [Deployed Frontend](https://taskflow-three-theta.vercel.app/)  
 🔗 [Deployed Backend](https://collaborative-board-9j5q.onrender.com)  
 📹 [Demo Video (YouTube / Loom)]()
+
+## 🧠 Tech Stack
+
+**Frontend:**
+| Tech | Role |
+|------|------|
+| [**React.js 19**](https://v6.vite.dev/) | React framework |
+| [**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS) | Custom CSS For Styling |
+| [**Socket IO Client**](https://socket.io/docs/v4/) | Bidirectional and low-latency communication for every platform |
