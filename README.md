@@ -1,6 +1,8 @@
-# 📋 👥 ✅ 🛠️  Taskflow: Real-Time Collaborative To-Do Board
+# 📋 👥 ✅ 🛠️ Taskflow: Real-Time Collaborative To-Do Board
 
-A Web-based Collaborative To-Do Board Application where Multiple Users can log in, manage tasks, and see changes happen in real time.
+A web-based collaborative To-Do Board application where multiple users can log in, manage tasks, and see changes in real time—similar to a minimal Trello board with live sync and smart logic.
+
+---
 
 [![React](https://img.shields.io/badge/React-v19-blue.svg)](https://reactjs.org/)
 [![CSS](https://img.shields.io/badge/CSS-3-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -14,186 +16,198 @@ A Web-based Collaborative To-Do Board Application where Multiple Users can log i
 
 ## 🚀 Live Demo
 
-🔗 [Deployed Frontend](https://taskflow-three-theta.vercel.app/)  
-🔗 [Deployed Backend](https://collaborative-board-9j5q.onrender.com)  
-📹 [Demo Video (YouTube / Loom)]()
+🔗 [**Frontend Deployment**](https://taskflow-three-theta.vercel.app/)  
+🔗 [**Backend Deployment**](https://collaborative-board-9j5q.onrender.com)  
+📹 [**Demo Video**](#) *(Coming soon)*
+
+---
 
 ## 🧠 Tech Stack
 
-**Frontend:**
-| Tech | Role |
-|------|------|
-| [**React.js 19**](https://v6.vite.dev/) | React framework |
-| [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Script Language |
-| [**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS) | Custom CSS For Styling |
-| [**React-Beautiful-DnD**](https://www.npmjs.com/package/react-beautiful-dnd) | Beautiful and accessible drag and drop for lists with React |
-| [**Socket IO Client**](https://socket.io/docs/v4/) | Bidirectional and low-latency communication for every platform |
+### Frontend:
 
-**Backend:**
-| Tech | Role |
-|------|------|
-| [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Script Language |
-| [**NodeJs**](https://nodejs.org/docs/latest/api/) | Backend Environment For Javascript |
-| [**ExpressJs**](https://www.mongodb.com/) | Web Framework For NodeJs |
-| [**MongoDB**](https://www.mongodb.com/) | Database |
-| [**Socket IO**](https://socket.io/docs/v4/) | Bidirectional and low-latency communication for every platform |
+| Technology | Purpose |
+|------------|---------|
+| [React.js 19](https://react.dev/) | UI development |
+| [JavaScript (ES6)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Scripting |
+| [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) | Styling |
+| [React Beautiful DnD](https://www.npmjs.com/package/react-beautiful-dnd) | Smooth drag-and-drop UX |
+| [Socket.IO Client](https://socket.io/docs/v4/) | Real-time communication |
+
+### Backend:
+
+| Technology | Purpose |
+|------------|---------|
+| [Node.js](https://nodejs.org/) | JavaScript runtime |
+| [Express.js](https://expressjs.com/) | Web framework |
+| [MongoDB + Mongoose](https://www.mongodb.com/) | NoSQL database |
+| [Socket.IO](https://socket.io/) | Real-time server communication |
+| [JWT + Bcrypt](https://jwt.io/) | Auth and password security |
+
+---
 
 ## 🛠️ Setup & Installation
 
-### 🧪 Prerequisites
+### 📦 Prerequisites
 
-- Node.js v18+
-- MongoDB (Atlas or Local)
-- Vite (optional, for frontend)
-- Yarn or npm
+- Node.js v18+  
+- MongoDB Atlas or Local DB  
+- Yarn or npm  
+- Vite (optional)
 
-### 📂 Backend Setup
+---
 
-### 1\. Clone the Repository
+### ⚙️ Backend Setup
+
+1. **Clone the Repository**
 
 ```bash
-git clone https://github.com/rohits2404//Collaborative-Board.git
-cd collaborative-board
-```
-### 2\. Backend
+git clone https://github.com/rohits2404/Collaborative-Board.git
+cd Collaborative-Board
+````
+
+2. **Install Dependencies**
 
 ```bash
 cd backend
 npm install
 ```
 
-🔐 Environment Variables
-Create a .env file inside /backend:
+3. **Environment Variables**
+
+Create a `.env` file inside `/backend`:
 
 ```env
 PORT=5000
 MONGODB_URL=your_mongodb_uri
 JWT_SECRET=your_secret_key
-CLIENT_URL=frontend_deployed_url
+CLIENT_URL=https://your-frontend-url.com
 ```
 
-▶️ Start Backend Server
+4. **Run the Server**
+
 ```bash
 npm run dev
 ```
 
-### 3\. Frontend
+---
+
+### 💻 Frontend Setup
 
 ```bash
 cd frontend
 npm install
 ```
 
-🔐 Environment Variables
-Create a .env file inside /backend:
+Create a `.env` file inside `/frontend`:
 
 ```env
-VITE_API_URL=(backend_deployed_url)/api
-VITE_SOCKET_URL=backend_deployed_url)
+VITE_API_URL=https://your-backend-url.com/api
+VITE_SOCKET_URL=https://your-backend-url.com
 ```
 
-▶️ Start Frontend Server
+Run the frontend:
+
 ```bash
 npm run dev
 ```
 
+---
+
 ## 📦 Features
 
 ### 👥 User Authentication
-- Secure registration and login
-- JWT-based token authentication
-- Passwords hashed using bcrypt
 
-### 🧱 Kanban Board
-- 3 columns: **To Do**, **In Progress**, **Done**
-- Drag and drop tasks between columns
-- Real-time updates across all clients
+* Registration & login
+* JWT token-based auth
+* Passwords hashed with bcrypt
 
-### ⚡ Real-Time Sync
-- Socket.IO used for syncing tasks instantly between users
+### 📋 Task Board (Kanban)
 
-### 📋 Task Management
-- Add, update, delete, assign tasks
-- Each task has title, description, status, assigned user, and priority
+* Columns: **To Do**, **In Progress**, **Done**
+* Drag and drop between columns
+* Reassign tasks to any user
+
+### ⚡ Real-Time Collaboration
+
+* All task updates sync across clients live
+* Built using Socket.IO
 
 ### 🧠 Smart Assign
-- Assigns the task to the user with the fewest active tasks in real-time
 
-### 🔄 Conflict Handling
-- If two users edit the same task at the same time:
-  - Conflict is detected
-  - Both versions are shown
-  - User decides whether to merge or overwrite
+* Assigns a task to the user with the fewest active tasks
+
+### ⚔️ Conflict Handling
+
+* Detects if two users edit the same task simultaneously
+* Shows both versions with option to **merge** or **overwrite**
 
 ### 📝 Action Log
-- Logs every action: create, update, assign, delete, move
-- Displays the last 20 actions in a side panel
-- Updates live as changes occur
+
+* Logs every task action (add/edit/delete/move)
+* Shows last 20 actions with real-time updates
 
 ### 🎨 UI & UX
-- Fully custom CSS without frameworks
-- Mobile responsive design
-- Smooth drag-drop with animations
-- Card flip animation for task details
+
+* 100% custom CSS
+* Fully responsive layout
+* Drag-and-drop with animation
+* Card flip animation on task click
 
 ---
 
----
+## 🧠 Logic Breakdown
 
-🧠 Explanations for Smart Assign and Conflict Handling Logic
+### 🔁 Smart Assign Logic
 
-🔁 Smart Assign Logic
-The Smart Assign feature ensures a fair distribution of active tasks among users by assigning a task to the user with the fewest non-completed tasks.
+Ensures fair task distribution by automatically assigning the task to the user with the **least number of active tasks** (not marked "Done").
 
-🧮 How It Works:
-All users are fetched from the database.
-
-All tasks with status other than Done are also fetched.
-
-A task count is calculated for each user:
+#### 🧮 How It Works:
 
 ```js
 const taskCounts = users.reduce((acc, user) => {
   acc[user._id] = tasks.filter(t => t.assignedTo.equals(user._id)).length;
   return acc;
 }, {});
+
+const [userIdWithFewestTasks] = Object.entries(taskCounts)
+  .sort((a, b) => a[1] - b[1])[0];
+
+task.assignedTo = mongoose.Types.ObjectId(userIdWithFewestTasks);
 ```
-The user with the fewest tasks is selected using:
 
-```js
-const [userIdWithFewestTasks] = Object.entries(taskCounts).sort((a, b) => a[1] - b[1])[0];
-```
-The task is assigned to that user and saved.
+✅ **Benefits**:
 
-✅ This logic ensures:
+* Balanced task load
+* Real-time updates via Socket.IO
+* Logs assignment for audit history
 
-Balanced task assignment
+---
 
-Real-time updates via Socket.IO
+### ⚔️ Conflict Handling Logic
 
-Audit logging via logAction
+Prevents **silent overwrites** when multiple users edit the same task at the same time.
 
-⚔️ Conflict Handling Logic
-The app detects if two users are trying to edit the same task concurrently and avoids silent overwrites.
-
-🧪 How It Works:
-When a task is edited, the previous state is captured:
+#### 🧪 How It Works:
 
 ```js
 const previousState = { ...task._doc };
 ```
-Updates are applied, and the new task state is saved.
 
-The logAction function logs both previousState and newState to the database.
+* `previousState` is saved before any update.
+* `logAction` stores both `previousState` and new `task`.
+* On the frontend:
 
-On the frontend, if a Socket.IO event or HTTP fetch reveals a mismatch (e.g., timestamps or field differences), the app prompts users to:
+  * If mismatch is detected (e.g., version conflict),
+  * User sees a prompt to **merge** or **overwrite** the task.
 
-View both versions of the task.
+💡 Ensures data consistency and user control.
 
-Choose to:
+---
 
-Merge the content manually, or
+## 📄 Documentation
 
-Overwrite the other version.
+* [Logic\_Document.md](./docs/Logic_Document.md) — Detailed explanation of Smart Assign & Conflict Handling
 
-💡 This prevents accidental data loss in collaborative sessions.
+---
+```
