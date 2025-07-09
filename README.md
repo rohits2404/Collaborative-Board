@@ -18,7 +18,7 @@ A web-based collaborative To-Do Board application where multiple users can log i
 
 🔗 [**Frontend Deployment**](https://taskflow-board.vercel.app/)  
 🔗 [**Backend Deployment**](https://collaborative-board-9j5q.onrender.com)  
-📹 [**Demo Video**](#) *(Coming soon)*
+📹 [**Demo Video**](https://www.loom.com/share/0ff76bd018f74639932ff76f3b65e798?sid=4c427979-0ffa-470d-b8ab-a676a84a70ee)
 
 ---
 
