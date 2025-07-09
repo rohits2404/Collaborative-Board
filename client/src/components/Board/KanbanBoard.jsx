@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import TaskCard from '../Card/TaskCard.jsx';
 import { tasksAPI } from '../../api/axios.js';
 import './KanbanBoard.css';
