@@ -77,6 +77,26 @@ CLIENT_URL=frontend_deployed_url
 npm run dev
 ```
 
+### 3\. Frontend
+
+```bash
+cd frontend
+npm install
+```
+
+🔐 Environment Variables
+Create a .env file inside /backend:
+
+```env
+VITE_API_URL=(backend_deployed_url)/api
+VITE_SOCKET_URL=backend_deployed_url)
+```
+
+▶️ Start Frontend Server
+```bash
+npm run dev
+```
+
 ## 📦 Features
 
 ### 👥 User Authentication
