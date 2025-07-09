@@ -210,4 +210,3 @@ const previousState = { ...task._doc };
 * [Logic\_Document.md](./docs/Logic_Document.md) — Detailed explanation of Smart Assign & Conflict Handling
 
 ---
-```
