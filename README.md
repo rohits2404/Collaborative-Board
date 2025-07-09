@@ -2,7 +2,7 @@
 
 A Web-based Collaborative To-Do Board Application where Multiple Users can log in, manage tasks, and see changes happen in real time.
 
-[![React](https://img.shields.io/badge/React-v18-blue.svg)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-v19-blue.svg)](https://reactjs.org/)
 [![CSS](https://img.shields.io/badge/CSS-3-blue.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Node.js](https://img.shields.io/badge/Node.js-20-green.svg)](https://nodejs.org/)
@@ -24,5 +24,16 @@ A Web-based Collaborative To-Do Board Application where Multiple Users can log i
 | Tech | Role |
 |------|------|
 | [**React.js 19**](https://v6.vite.dev/) | React framework |
+| [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Script Language |
 | [**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS) | Custom CSS For Styling |
+| [**React-Beautiful-DnD**](https://www.npmjs.com/package/react-beautiful-dnd) | Beautiful and accessible drag and drop for lists with React |
 | [**Socket IO Client**](https://socket.io/docs/v4/) | Bidirectional and low-latency communication for every platform |
+
+**Backend:**
+| Tech | Role |
+|------|------|
+| [**JavaScript**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) | Script Language |
+| [**NodeJs**](https://nodejs.org/docs/latest/api/) | Backend Environment For Javascript |
+| [**ExpressJs**](https://www.mongodb.com/) | Web Framework For NodeJs |
+| [**MongoDB**](https://www.mongodb.com/) | Database |
+| [**Socket IO**](https://socket.io/docs/v4/) | Bidirectional and low-latency communication for every platform |
