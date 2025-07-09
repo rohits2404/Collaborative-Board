@@ -137,3 +137,63 @@ npm run dev
 - Card flip animation for task details
 
 ---
+
+---
+
+🧠 Explanations for Smart Assign and Conflict Handling Logic
+
+🔁 Smart Assign Logic
+The Smart Assign feature ensures a fair distribution of active tasks among users by assigning a task to the user with the fewest non-completed tasks.
+
+🧮 How It Works:
+All users are fetched from the database.
+
+All tasks with status other than Done are also fetched.
+
+A task count is calculated for each user:
+
+```js
+const taskCounts = users.reduce((acc, user) => {
+  acc[user._id] = tasks.filter(t => t.assignedTo.equals(user._id)).length;
+  return acc;
+}, {});
+```
+The user with the fewest tasks is selected using:
+
+```js
+const [userIdWithFewestTasks] = Object.entries(taskCounts).sort((a, b) => a[1] - b[1])[0];
+```
+The task is assigned to that user and saved.
+
+✅ This logic ensures:
+
+Balanced task assignment
+
+Real-time updates via Socket.IO
+
+Audit logging via logAction
+
+⚔️ Conflict Handling Logic
+The app detects if two users are trying to edit the same task concurrently and avoids silent overwrites.
+
+🧪 How It Works:
+When a task is edited, the previous state is captured:
+
+```js
+const previousState = { ...task._doc };
+```
+Updates are applied, and the new task state is saved.
+
+The logAction function logs both previousState and newState to the database.
+
+On the frontend, if a Socket.IO event or HTTP fetch reveals a mismatch (e.g., timestamps or field differences), the app prompts users to:
+
+View both versions of the task.
+
+Choose to:
+
+Merge the content manually, or
+
+Overwrite the other version.
+
+💡 This prevents accidental data loss in collaborative sessions.
